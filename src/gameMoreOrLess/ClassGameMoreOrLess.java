@@ -1,6 +1,7 @@
 package gameMoreOrLess;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class ClassGameMoreOrLess {
 
@@ -49,5 +50,24 @@ public class ClassGameMoreOrLess {
 			j++;
 		} while ( i < 3);
 		System.out.println("Le nombre d'essai pour avoir 2 paires suivi d'un impaire est de :" + j);
+		// exercice 3 : trouver un chiffre entre 0 et 1000
+		Random rand = new Random();
+		int nombreAleatoire = rand.nextInt(1000-0+1)+0;
+		System.out.println("Le nombre aléatoire à trouver est :" + nombreAleatoire);
+		int nombreUtilisateur;
+		int k = 0;
+		do {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Veuillez saisir un nombre : ");
+			nombreUtilisateur = sc.nextInt();
+			System.out.println("le chiffre choisit par l'utilisateur est : " + nombreUtilisateur);
+			if(nombreAleatoire <= nombreUtilisateur) {
+				System.out.println("c'est moins");
+			} else {
+				System.out.println("c'est plus");
+			}
+			k++;
+		} while(nombreAleatoire != nombreUtilisateur);
+		System.out.println("Vous avez gagné en " + k); 
 	}
 }
