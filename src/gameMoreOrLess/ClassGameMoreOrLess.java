@@ -21,40 +21,25 @@ public class ClassGameMoreOrLess {
 		System.out.println("nombre de mail se terminant par @sfr.fr :" + count1);
 		System.out.println("nombre de mail se terminant par @hotmail.fr :" + count2);
 		//exercice 2 : trois nombre entre 0 et 1000 (2 nombres paires suivi d'un nombre impaire)
-		byte i = 0;
-		byte j = 0;
+		byte tentative=1;
 		int nombreAleatoire1;
 		int nombreAleatoire2;
 		int nombreAleatoire3;
-		boolean paire1 = false;
-		boolean paire2 = false;
-		boolean impaire = false;
-		do {
-			Random rand = new Random();
-			int nombreAleatoire = rand.nextInt(1000-0+1)+0;
-			if( nombreAleatoire % 2 == 0 && paire1 == false && paire2 == false) {
-				paire1 = true;
-				i++;
-				nombreAleatoire1 = nombreAleatoire;
-				System.out.println("nombre1 :" + nombreAleatoire1);
-			} else if(nombreAleatoire % 2 == 0 && paire1 && paire2 == false){
-				paire2 = true;
-				i++;
-				nombreAleatoire2 = nombreAleatoire;
-				System.out.println("nombre2 :" + nombreAleatoire2);
-			} else if(nombreAleatoire % 2 != 0  && impaire == false && paire1 && paire2) {
-				impaire = true;
-				i++;
-				nombreAleatoire3 = nombreAleatoire;
-				System.out.println("nombre3 :" + nombreAleatoire3);
-			}
-			j++;
-		} while ( i < 3);
-		System.out.println("Le nombre d'essai pour avoir 2 paires suivi d'un impaire est de :" + j);
+		Random rand = new Random();
+			do {
+				nombreAleatoire1 = rand.nextInt(1001);
+				nombreAleatoire2 = rand.nextInt(1001);
+				nombreAleatoire3 = rand.nextInt(1001);
+				System.out.println("Le nombre aléatoire 1 est :" + nombreAleatoire1);
+				System.out.println("Le nombre aléatoire 2 est :" + nombreAleatoire2);
+				System.out.println("Le nombre aléatoire 3 est :" + nombreAleatoire3);
+				tentative++;
+			} while (nombreAleatoire1 % 2 == 1 && nombreAleatoire2 % 2 == 1 && nombreAleatoire3 % 2 == 0);
+			System.out.println("Le nombre d'essai pour avoir 2 paires suivi d'un impaire est de :" + tentative);
+
 		// exercice 3 : trouver un chiffre entre 0 et 1000
 	       OffsetTime startTime = OffsetTime.now();
-		Random rand = new Random();
-		int nombreAleatoire = rand.nextInt(1000-0+1)+0;
+		int nombreAleatoire = rand.nextInt(1001);
 		System.out.println("Le nombre aléatoire à trouver est :" + nombreAleatoire);
 		int nombreUtilisateur;
 		int k = 0;
